@@ -272,8 +272,7 @@
                 <li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/">Pengujian</a>
                 </li>
                 <li class="menu-item hidden"><a href="<?= route_to('kucing_list'); ?>">Kucing</a></li>
-                <li class="menu-item hidden"><a
-                        href="https://github.com/codeigniter4/CodeIgniter4/blob/master/CONTRIBUTING.md">Karakteristik</a>
+                <li class="menu-item hidden"><a href="<?= route_to('ciri_list'); ?>">Karakteristik</a>
                 </li>
                 <li class="menu-item hidden"><a href="https://forum.codeigniter.com/">Pengetahuan</a></li>
             </ul>

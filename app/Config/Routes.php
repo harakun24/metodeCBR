@@ -32,10 +32,18 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->addRedirect('/admin/(:any)', '/');
 $routes->get('/kucing', 'Admin::kucing', ['as' => 'kucing_list']);
 $routes->post('/kucing/tambah', 'Admin::kucing_add', ['as' => 'kucing_save']);
 $routes->add('/kucing/hapus/(:num)', 'Admin::kucing_hapus/$1', ['as' => 'kucing_del']);
+$routes->add('/kucing/edit/(:num)', 'Admin::kucing_edit/$1', ['as' => 'kucing_edit']);
 $routes->add('/kucing/get/(:num)', 'Admin::kucing_get/$1', ['as' => 'kucing_get']);
+
+$routes->get('/ciri', 'Admin::ciri', ['as' => 'ciri_list']);
+$routes->post('/ciri/tambah', 'Admin::ciri_add', ['as' => 'ciri_save']);
+$routes->add('/ciri/hapus/(:num)', 'Admin::ciri_hapus/$1', ['as' => 'ciri_del']);
+$routes->add('/ciri/edit/(:num)', 'Admin::ciri_edit/$1', ['as' => 'ciri_edit']);
+$routes->add('/ciri/get/(:num)', 'Admin::ciri_get/$1', ['as' => 'ciri_get']);
 
 /**
  * --------------------------------------------------------------------
