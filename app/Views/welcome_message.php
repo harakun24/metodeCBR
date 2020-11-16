@@ -232,6 +232,23 @@
             color: white;
         }
     }
+
+    @keyframes b {
+
+        0%,
+        80% {
+            opacity: 1;
+        }
+
+        90%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    #carouselExampleSlidesOnly {
+        animation: b 2.55s infinite;
+    }
     </style>
 </head>
 
@@ -251,15 +268,14 @@
                 <li class="menu-toggle">
                     <button onclick="toggleMenu();">&#9776;</button>
                 </li>
-                <li class="menu-item hidden"><a href="#">Home</a></li>
-                <li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/" target="_blank">Lakukan
-                        uji</a>
+                <li class="menu-item hidden"><a href="/">Home</a></li>
+                <li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/">Pengujian</a>
                 </li>
-                <li class="menu-item hidden"><a href="https://forum.codeigniter.com/" target="_blank">Sampel</a></li>
+                <li class="menu-item hidden"><a href="<?= route_to('kucing_list'); ?>">Kucing</a></li>
                 <li class="menu-item hidden"><a
-                        href="https://github.com/codeigniter4/CodeIgniter4/blob/master/CONTRIBUTING.md"
-                        target="_blank">Log in</a>
+                        href="https://github.com/codeigniter4/CodeIgniter4/blob/master/CONTRIBUTING.md">Karakteristik</a>
                 </li>
+                <li class="menu-item hidden"><a href="https://forum.codeigniter.com/">Pengetahuan</a></li>
             </ul>
         </div>
 
@@ -270,58 +286,8 @@
     <!-- CONTENT -->
 
     <section>
-        <div>
+        <?= $this->renderSection('content'); ?>
 
-            <h1>Sistem Pakar dengan Metode CBR</h1>
-            <p>
-                Case Based Reasoning (CBR) merupakan suatu metode untuk menyelesaikan masalah dengan berpatokan pada
-                kasus sebelumnya.Konsep dari metode case based reasoning ditemukan dari ide untuk menggunakan pengalaman
-                – pengalaman yang terdokumentasi untuk menyelesaikan masalah yang baru. Permasalahan baru dapat
-                diselesaikan dengan memanfaatkan kembali dan
-                mungkin malakukan penyesuaian terhadap permasalahan yang memiliki kesamaan yang telah diselesaikan
-                sebelumnya.
-            </p>
-            <div class="col-12 d-flex justify-content-center">
-                <div class="col-6 bg-dark p-4">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel"
-                        data-interval="2500">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="col-12 d-flex justify-content-around">
-                                    <img src="assets/img/jap.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/manx.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/ragdoll.jpeg" class="d-block col-3" alt="...">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-12 d-flex justify-content-around">
-                                    <img src="assets/img/angora.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/korat.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/russian.jpeg" class="d-block col-3" alt="...">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-12 d-flex justify-content-around">
-                                    <img src="assets/img/abyssinian.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/charteus.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/domestik.jpeg" class="d-block col-3" alt="...">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-12 d-flex justify-content-around">
-                                    <img src="assets/img/coon.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/persia.jpeg" class="d-block col-3" alt="...">
-                                    <img src="assets/img/manx.jpeg" class="d-block col-3" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-                <a href="#" class="btn btn-lg mt-4 btn-outline-primary">mulai pengujian</a>
-            </div>
-        </div>
 
     </section>
 
@@ -335,7 +301,7 @@
         <div class="copyrights">
 
             <p class=" d-flex justify-content-between mt-4">&copy; <?= date('Y') ?> UTS 18-IF-01
-                <span>Mata kuliah Kecerdasan
+                <span>Kecerdasan
                     Buatan </span>
             </p>
 
