@@ -95,7 +95,7 @@
     }
 
     header .menu-toggle button {
-        background-color: rgba(221, 72, 20, .6);
+        background-color: rgb(89 195 243);
         border: none;
         border-radius: 3px;
         color: rgba(255, 255, 255, 1);
@@ -111,7 +111,7 @@
 
     header .menu-toggle button:hover,
     header .menu-toggle button:focus {
-        background-color: rgba(221, 72, 20, .8);
+        background-color: #2196F3;
         color: rgba(255, 255, 255, .8);
     }
 
@@ -208,7 +208,8 @@
         }
 
         header .menu-item {
-            background-color: rgba(244, 245, 246, 1);
+            /* background-color: rgba(244, 245, 246, 1); */
+            /* box-shadow: 0px 0px 12px black; */
             border-top: 1px solid rgba(242, 242, 242, 1);
             margin: 0 15px;
             width: calc(100% - 30px);
@@ -223,7 +224,7 @@
         }
 
         header li.menu-item a {
-            background-color: rgba(221, 72, 20, .1);
+            /* background-color: rgba(221, 72, 20, .1); */
         }
 
         header li.menu-item a:hover,
@@ -274,7 +275,7 @@
                 <li class="menu-item hidden"><a href="<?= route_to('kucing_list'); ?>">Kucing</a></li>
                 <li class="menu-item hidden"><a href="<?= route_to('ciri_list'); ?>">Karakteristik</a>
                 </li>
-                <li class="menu-item hidden"><a href="https://forum.codeigniter.com/">Pengetahuan</a></li>
+                <li class="menu-item hidden"><a href="<?= route_to('hub_list'); ?>">Pengetahuan</a></li>
             </ul>
         </div>
 

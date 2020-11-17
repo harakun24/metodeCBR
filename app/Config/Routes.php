@@ -45,6 +45,13 @@ $routes->add('/ciri/hapus/(:num)', 'Admin::ciri_hapus/$1', ['as' => 'ciri_del'])
 $routes->add('/ciri/edit/(:num)', 'Admin::ciri_edit/$1', ['as' => 'ciri_edit']);
 $routes->add('/ciri/get/(:num)', 'Admin::ciri_get/$1', ['as' => 'ciri_get']);
 
+$routes->get('/hub', 'Admin::hub', ['as' => 'hub_list']);
+$routes->get('/hub/cat/(:num)', 'Admin::hub_cat/$1');
+$routes->post('/hub/tambah', 'Admin::hub_add', ['as' => 'hub_save']);
+$routes->add('/hub/hapus/(:num)', 'Admin::hub_hapus/$1', ['as' => 'hub_del']);
+$routes->add('/hub/edit/(:num)', 'Admin::hub_edit/$1', ['as' => 'hub_edit']);
+$routes->add('/hub/get/(:num)', 'Admin::hub_get/$1', ['as' => 'hub_get']);
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

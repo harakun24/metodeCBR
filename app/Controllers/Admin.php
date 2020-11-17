@@ -8,6 +8,7 @@ class Admin extends BaseController
     {
         $this->kucing = new \App\Models\kucingModel();
         $this->ciri = new \App\Models\ciriModel();
+        $this->hub = new \App\Models\hubModel();
     }
     public function index()
     {
@@ -105,6 +106,77 @@ class Admin extends BaseController
     public function ciri_hapus($id)
     {
         $this->ciri->delete($id);
+        // dd(true);
+        return json_encode(['status' => 200]);
+    }
+    //hub
+
+    public function hub()
+    {
+        $data = [
+            'kucing' => $this->kucing->findAll(),
+            'ciri' => $this->ciri->findAll()
+        ];
+        return view('hub_list', $data);
+    }
+
+    public function hub_cat($id)
+    {
+        $res = $this->hub->where("hub_kucing", $id)->findAll();
+        $j = 0;
+        foreach ($res as $r)
+            $j++;
+        for ($i = 0; $i < $j; $i++) {
+            $temp = $this->ciri->find($res[$i]['hub_ciri']);
+            $res[$i]['ciri_nama'] = $temp['ciri_ciri'];
+        }
+        echo json_encode($res);
+    }
+
+    public function hub_get($id)
+    {
+        $res = $this->hub->find($id);
+        $j = 0;
+        foreach ($res as $r)
+            $j++;
+        $temp = $this->kucing->find($res['hub_kucing']);
+        $res['kucing_jenis'] = $temp['kucing_jenis'];
+        $temp = $this->ciri->find($res['hub_ciri']);
+        $res['ciri_ciri'] = $temp['ciri_ciri'];
+        echo json_encode($res);
+    }
+    public function hub_add()
+    {
+        $var = $this->request->getVar();
+        $c = $this->hub->where([
+            'hub_ciri' => $var['hub_ciri'],
+            'hub_kucing' => $var['hub_kucing'],
+        ])->first();
+        if ($c != null) {
+            session()->setFlashData('finsert', true);
+            return redirect()->to('/hub');
+        }
+        $this->hub->save([
+            'hub_kucing' => $var['hub_kucing'],
+            'hub_ciri' => $var['hub_ciri'],
+        ]);
+        session()->setFlashData('insert', true);
+        return redirect()->to('/hub');
+    }
+    public function hub_edit($id)
+    {
+        $var = $this->request->getVar();
+        $this->hub->save([
+            'hub_id' => $id,
+            'hub_ciri' => $var['hub_ciri'],
+            'hub_kucing' => $var['hub_kucing'],
+        ]);
+        session()->setFlashData('update', true);
+        return redirect()->to('/hub');
+    }
+    public function hub_hapus($id)
+    {
+        $this->hub->delete($id);
         // dd(true);
         return json_encode(['status' => 200]);
     }
