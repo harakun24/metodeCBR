@@ -13,7 +13,7 @@
     </p>
 
     <div class="col-12 d-flex justify-content-center">
-        <a href="#" class="btn btn-lg mt-4 btn-outline-primary">mulai pengujian <i class="fa fa-external-link-alt"
+        <a href="#" class="btn btn-sm mt-4 btn-outline-primary">mulai pengujian <i class="fa fa-external-link-alt"
                 style="font-size: 80%;"></i></a>
     </div>
 </div>

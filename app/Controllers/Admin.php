@@ -147,6 +147,7 @@ class Admin extends BaseController
     }
     public function hub_add()
     {
+        $this->session->set('');
         $var = $this->request->getVar();
         $c = $this->hub->where([
             'hub_ciri' => $var['hub_ciri'],
@@ -156,6 +157,7 @@ class Admin extends BaseController
             session()->setFlashData('finsert', true);
             return redirect()->to('/hub');
         }
+
         $this->hub->save([
             'hub_kucing' => $var['hub_kucing'],
             'hub_ciri' => $var['hub_ciri'],
@@ -179,5 +181,66 @@ class Admin extends BaseController
         $this->hub->delete($id);
         // dd(true);
         return json_encode(['status' => 200]);
+    }
+
+    //metode
+    public function cbr($arr)
+    {
+        $arrhasil = [];
+        $fhasil = 0;
+        $r = str_split($arr);
+        $cat = $this->kucing->findAll();
+        $ciri = $this->ciri->findAll();
+        $tmp = [];
+        $o = 0;
+        foreach ($r as $rr)
+            $o++;
+        for ($i = 0; $i < $o; $i++) {
+            $temp[$i] = [
+                'name' => $ciri[$i]['ciri_id'],
+                'bobot' => $ciri[$i]['ciri_bobot'],
+                'status' => $r[$i],
+            ];
+        }
+        $temp2 = [];
+        foreach ($cat as $c) {
+            $hub = $this->hub->where('hub_kucing', $c['kucing_id'])->findAll();
+            $total = 0;
+            foreach ($hub as $h) {
+                foreach ($temp as $t) {
+                    if ($t['name'] == $h['hub_ciri'] && $t['status'] == 1) {
+                        $s = true;
+                        foreach ($temp2 as $t2) {
+                            if ($t2['name'] == $t['name'])
+                                $s = false;
+                        }
+                        if ($s) {
+                            array_push($temp2, [
+                                'name' => $t['name'],
+                                'bobot' => $t['bobot'],
+                            ]);
+                        }
+                    }
+                }
+            }
+            foreach ($temp2 as $te) {
+                $total += $te['bobot'];
+            }
+            $ciriAll = 0;
+            foreach ($temp as $te) {
+                $ciriAll += $te['bobot'];
+            }
+            // d($temp2);
+            // d($total);
+            $hasil = round(($total / $ciriAll) * 100, 4);
+            array_push($arrhasil, [
+                'kucing' => $c['kucing_jenis'],
+                'hasil' => round($hasil, 2)
+            ]);
+            $fhasil = $hasil > $fhasil ? $hasil : $fhasil;
+        }
+        d($fhasil);
+        d($arrhasil);
+        dd($temp);
     }
 }

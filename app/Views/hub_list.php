@@ -1,7 +1,7 @@
 <?= $this->extend('welcome_message') ?>
 <?= $this->section('content') ?>
 <script src="assets/js/sweetalert2-all.js"></script>
-<div class="card">
+<div class="card mb-4">
     <div class="card-body">
         <div class="col mb-2 d-flex align-items-center">
             <div class="col-4 d-flex">
