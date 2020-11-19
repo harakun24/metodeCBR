@@ -1,5 +1,15 @@
 <?= $this->extend('welcome_message') ?>
 <?= $this->section('content') ?>
+<style>
+.img-show {
+    width: 50px;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+.img-show:hover {
+    width: 200px
+}
+</style>
 <script src="assets/js/sweetalert2-all.js"></script>
 <div class="card">
     <div class="card-body">
@@ -17,7 +27,7 @@
                 <tr>
                     <td>C-<?= $k['kucing_id']; ?></td>
                     <td><?= $k['kucing_jenis']; ?></td>
-                    <td><img src="assets/img/<?= $k['kucing_foto']; ?>" style="width:50px" alt=""></td>
+                    <td><img class="img-show" src="assets/img/<?= $k['kucing_foto']; ?>" alt=""></td>
                     <td>
                         <button class="btn btn-sm btn-outline-success" onclick="edit(<?= $k['kucing_id']; ?>)"><i
                                 class="fa fa-pencil-alt"></i></button>
