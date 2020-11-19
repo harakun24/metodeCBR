@@ -187,7 +187,7 @@ class Admin extends BaseController
     public function cbr($arr)
     {
         $arrhasil = [];
-        $fhasil = 0;
+        $fhasil = 0.00;
         $r = str_split($arr);
         $cat = $this->kucing->findAll();
         $ciri = $this->ciri->findAll();
@@ -232,15 +232,32 @@ class Admin extends BaseController
             }
             // d($temp2);
             // d($total);
-            $hasil = round(($total / $ciriAll) * 100, 4);
+            $hasil = round(($total / $ciriAll), 5);
             array_push($arrhasil, [
                 'kucing' => $c['kucing_jenis'],
-                'hasil' => round($hasil, 2)
+                'foto' => $c['kucing_foto'],
+                'deskripsi' => $c['kucing_deskripsi'],
+                'hasil' => $hasil
+            ]);
+            array_push($tmp, [
+                'kucing' => $c['kucing_jenis'],
+                'data' => $temp2,
+                'total' => $total,
+                'all' => $ciriAll,
+                'hasil' => $hasil,
             ]);
             $fhasil = $hasil > $fhasil ? $hasil : $fhasil;
         }
-        d($fhasil);
-        d($arrhasil);
-        dd($temp);
+        // echo "hai";
+        // d($fhasil);
+        // d($tmp);
+        // d($arrhasil);
+        // dd($temp);
+        $data = [
+            'fhasil' => $fhasil,
+            'tmp' => $tmp,
+            'arrhasil' => $arrhasil
+        ];
+        return view('cbr_hasil', $data);
     }
 }
