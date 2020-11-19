@@ -206,6 +206,7 @@ class Admin extends BaseController
             $temp2 = [];
             $hub = $this->hub->where('hub_kucing', $c['kucing_id'])->findAll();
             $total = 0;
+            $ciriAll = 0;
             foreach ($hub as $h) {
                 foreach ($temp as $t) {
                     if ($t['name'] == $h['hub_ciri'] && $t['status'] == 1) {
@@ -227,14 +228,15 @@ class Admin extends BaseController
                         }
                     }
                 }
+                $ciriH = $this->ciri->find($h['hub_ciri']);
+                $ciriAll += $ciriH['ciri_bobot'];
             }
             foreach ($temp2 as $te) {
                 $total += $te['bobot'];
             }
-            $ciriAll = 0;
-            foreach ($temp as $te) {
-                $ciriAll += $te['bobot'];
-            }
+            // foreach ($temp as $te) {
+            //     $ciriAll += $te['bobot'];
+            // }
             // d($temp2);
             // d($total);
             $hasil = round(($total / $ciriAll), 5);
