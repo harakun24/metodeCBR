@@ -16,7 +16,8 @@
     <?php endforeach ?>
     <div class="col-12 d-flex justify-content-center mt-2">
 
-        <a href="#" class="btn btn-outline-success" id="val">Lihat hasil <i class="fa fa-external-link-alt"></i></a>
+        <a href="#" class="btn btn-outline-primary p-3 px-4 m-2" id="val">Lihat hasil &nbsp; <i
+                class="fa fa-external-link-alt"></i></a>
     </div>
 </div>
 <script>
