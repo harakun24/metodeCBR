@@ -286,7 +286,9 @@
     <!-- CONTENT -->
 
     <section>
-        <?= $this->renderSection('content'); ?>
+        <div class="col-12 mb-4 pb-4">
+            <?= $this->renderSection('content'); ?>
+        </div>
 
 
     </section>

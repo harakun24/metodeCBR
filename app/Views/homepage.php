@@ -13,8 +13,8 @@
     </p>
 
     <div class="col-12 d-flex justify-content-center">
-        <a href="#" class="btn btn-sm mt-4 btn-outline-primary">mulai pengujian <i class="fa fa-external-link-alt"
-                style="font-size: 80%;"></i></a>
+        <a href="<?= route_to('cbr_form'); ?>" class="btn btn-sm p-3 mt-4 btn-outline-primary">mulai pengujian <i
+                class="fa fa-external-link-alt" style="font-size: 80%;"></i></a>
     </div>
 </div>
 <?= $this->endSection() ?>
