@@ -301,8 +301,10 @@
         <div class="copyrights">
 
             <p class=" d-flex justify-content-between mt-4">&copy; <?= date('Y') ?> UTS 18-IF-01
-                <span>Kecerdasan
-                    Buatan </span>
+                <a href="https://github.com/harakun24/metodeCBR" class="btn btn-secondary text-white">
+                    <img src="/github.svg" alt=""> github
+                </a>
+
             </p>
 
         </div>

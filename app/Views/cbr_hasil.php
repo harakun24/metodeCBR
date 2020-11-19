@@ -1,9 +1,11 @@
 <?= $this->extend('welcome_message') ?>
 <?= $this->section('content') ?>
 <div class="mb-4 pb-4">
+    <?php if ($fhasil > 0) : ?>
     <button onclick="sh()" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-chart-bar"></i>
         perhitungan</button>
     <div id="proses">
+
         <?php foreach ($tmp as $t) : ?>
         <div class="card m-2">
             <div class="card-body">
@@ -39,6 +41,10 @@
     <?php endif ?>
     <?php endforeach ?>
 
+    <?php else : ?>
+    Tidak ada data yang cocok <br>
+    <a href="<?= route_to('cbr_form'); ?>" class="btn btn-outline-success btn-sm mt-2">kembali</a>
+    <?php endif ?>
 </div>
 <script>
 let d = document.getElementById("proses")
