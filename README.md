@@ -30,8 +30,8 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 
 ### contoh:
 
-database.default.hostname = localhost
-database.default.database = db
-database.default.username = root
-database.default.password = root
-database.default.DBDriver = MySQLi
+database.default.hostname = localhost <br>
+database.default.database = db <br>
+database.default.username = root <br>
+database.default.password = root <br>
+database.default.DBDriver = MySQLi <br>
