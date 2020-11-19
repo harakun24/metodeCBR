@@ -3,7 +3,8 @@
 <script src="assets/js/sweetalert2-all.js"></script>
 <div class="card">
     <div class="card-body">
-        <button onclick="tambah()" class="btn mb-2 btn-sm btn-primary">Tambah <i class="fa fa-plus"></i></button>
+        <button onclick="tambah()" style="padding-top:10px;padding-bottom:10px;"
+            class="px-4 btn mb-2 btn-sm btn-primary">Tambah <i class="fa fa-plus"></i></button>
         <table class="table table-bordered table-hover text-center">
             <thead>
                 <th>Kode</th>

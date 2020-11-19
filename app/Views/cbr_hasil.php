@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <div class="mb-4 pb-4">
     <?php if ($fhasil > 0) : ?>
-    <button onclick="sh()" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-chart-bar"></i>
+    <button onclick="sh()" class="p-3 btn btn-sm btn-outline-success mb-2"><i class="fa fa-chart-bar"></i>
         perhitungan</button>
     <div id="proses">
 

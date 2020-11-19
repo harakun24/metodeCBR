@@ -13,7 +13,8 @@
                     <?php endforeach ?>
                 </select>
             </div>
-            <button onclick="tambah()" class=" ml-4 btn btn-sm btn-primary">Tambah <i class="fa fa-plus"></i></button>
+            <button onclick="tambah()" class="p-2 px-3 ml-2 btn btn-sm btn-primary">Tambah <i
+                    class="fa fa-plus"></i></button>
         </div>
         <table class="table table-bordered table-hover text-center">
             <thead>
