@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 17, 2020 at 07:12 PM
+-- Generation Time: Nov 19, 2020 at 05:42 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -81,7 +81,49 @@ CREATE TABLE `hub` (
 
 INSERT INTO `hub` (`hub_id`, `hub_kucing`, `hub_ciri`) VALUES
 (1, 1, 1),
-(2, 1, 2);
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5),
+(6, 2, 8),
+(7, 2, 9),
+(8, 2, 10),
+(9, 2, 11),
+(10, 2, 13),
+(11, 3, 12),
+(12, 3, 13),
+(13, 4, 11),
+(14, 4, 13),
+(15, 4, 14),
+(16, 4, 15),
+(17, 4, 16),
+(18, 5, 11),
+(19, 5, 6),
+(20, 5, 14),
+(21, 5, 17),
+(22, 5, 18),
+(23, 5, 19),
+(24, 6, 14),
+(25, 6, 21),
+(26, 6, 22),
+(27, 7, 7),
+(28, 7, 4),
+(29, 7, 16),
+(30, 8, 7),
+(31, 8, 17),
+(32, 8, 19),
+(33, 8, 20),
+(34, 9, 4),
+(35, 9, 16),
+(36, 9, 5),
+(37, 10, 7),
+(38, 10, 11),
+(39, 10, 12),
+(40, 11, 7),
+(41, 11, 15),
+(42, 11, 10),
+(43, 11, 16),
+(44, 11, 23);
 
 -- --------------------------------------------------------
 
@@ -107,7 +149,7 @@ INSERT INTO `kucing` (`kucing_id`, `kucing_jenis`, `kucing_foto`, `kucing_deskri
 (4, 'Korat', 'Korat.jpeg', 'Korat adalah ras kucing bertubuh sedang, dengan badannya yang kuat, berotot, ramping, dan panjang. Telinganya runcing ke atas. Warna bulunya hanya polos, dan tidak memiliki pola. Warna dasar bulu korat jarang ada pada ras kucing lainnya, kerena korat memiliki warna biru keabu-abuan. Selain itu, warna pada bulunya juga memilki alur dari bagian perut berwarna keabu-abuan, kemudian naik ke atas pada bagian punggung biasanya lebih gelap atau abu-abu pekat.'),
 (5, 'Manx', 'Manx.jpeg', 'Manx dikenal sebagai kucing yang setia kepada satu orang (majikan) atau satu keluarga dan biasanya agak sulit untuk hidup beradaptasi dengan majikan atau keluarga lain, sehingga manx mendapat julukan one person cat atau one family cat'),
 (6, 'Japanese Bobtail', 'jap.jpeg', 'Kucing ekor bundel jepang adalah salah satu ras kucing alami yang berasal dari Jepang. Kucing ekor bundel jepang sudah ada sejak ribuan abad yang lalu. Nama ras ini banyak disebutkan dan digambarkan dalam berbagai dokumen-dokumen kuno Jepang. Kucing ini dipercayai sebagai wujud asli dari Maneki Neko.'),
-(7, 'Angora', 'Angora.jpeg', 'Anggora turki adalah salah satu ras kucing domestik alami tertua. Ras ini berasal dari Ankara, Turki. Kucing ini sangat populer dan terkenal di Indonesia. Secara sederhana, ras kucing ini juga dikenal sebagai anggora atau kucing ankara.'),
+(7, 'Anggora', 'Angora.jpeg', 'Anggora turki adalah salah satu ras kucing domestik alami tertua. Ras ini berasal dari Ankara, Turki. Kucing ini sangat populer dan terkenal di Indonesia. Secara sederhana, ras kucing ini juga dikenal sebagai anggora atau kucing ankara.'),
 (8, 'persia', 'persia.jpeg', 'Kucing persia adalah ras kucing domestik berbulu panjang dengan karakter wajah bulat dan moncong pendek. Namanya mengacu pada Persia, nama lama Iran, di mana kucing serupa ditemukan. Sejak akhir abad 19, kucing jenis ini dikembangkan di Britania Raya dan Amerika Serikat usai Perang Dunia II.'),
 (9, 'Domestik', 'domestik.jpeg', 'Kucing disebut juga kucing domestik atau kucing rumah adalah sejenis mamalia karnivora dari keluarga Felidae. Kata \"kucing\" biasanya merujuk kepada \"kucing\" yang telah dijinakkan, tetapi bisa juga merujuk kepada \"kucing besar\" seperti singa dan harimau. '),
 (10, 'Ragdoll', 'Ragdoll.jpeg', 'Ragdoll adalah salah satu ras kucing terbesar di dunia yang telah diakui oleh Guinness World Records. Ragdoll awalnya dikembangkan oleh Ann Baker dari Amerika Serikat. '),
@@ -149,7 +191,7 @@ ALTER TABLE `ciri`
 -- AUTO_INCREMENT for table `hub`
 --
 ALTER TABLE `hub`
-  MODIFY `hub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `hub_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `kucing`
