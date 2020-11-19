@@ -253,7 +253,7 @@
 <body>
 
     <!-- HEADER: MENU + HEROE SECTION -->
-    <header>
+    <header class="pb-2">
 
         <div class="menu">
             <ul>
