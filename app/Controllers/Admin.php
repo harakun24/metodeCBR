@@ -202,8 +202,8 @@ class Admin extends BaseController
                 'status' => $r[$i],
             ];
         }
-        $temp2 = [];
         foreach ($cat as $c) {
+            $temp2 = [];
             $hub = $this->hub->where('hub_kucing', $c['kucing_id'])->findAll();
             $total = 0;
             foreach ($hub as $h) {
@@ -215,6 +215,11 @@ class Admin extends BaseController
                                 $s = false;
                         }
                         if ($s) {
+                            // d([
+                            //     'c' => $c['kucing_jenis'],
+                            //     't' => $t['name'],
+                            //     'h' => $h['hub_ciri'],
+                            // ]);
                             array_push($temp2, [
                                 'name' => $t['name'],
                                 'bobot' => $t['bobot'],
@@ -252,7 +257,6 @@ class Admin extends BaseController
         // d($fhasil);
         // d($tmp);
         // d($arrhasil);
-        // dd($temp);
         $data = [
             'fhasil' => $fhasil,
             'tmp' => $tmp,
