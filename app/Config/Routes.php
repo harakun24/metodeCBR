@@ -53,6 +53,7 @@ $routes->add('/hub/edit/(:num)', 'Admin::hub_edit/$1', ['as' => 'hub_edit']);
 $routes->add('/hub/get/(:num)', 'Admin::hub_get/$1', ['as' => 'hub_get']);
 
 $routes->get('/cbr/(:num)', 'Admin::cbr/$1', ['as' => 'cbr']);
+$routes->get('/pengujian', 'Admin::input_cbr', ['as' => 'cbr_form']);
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -17,10 +17,7 @@
         transition: background-color 300ms ease, color 300ms ease;
     }
 
-    *:focus {
-        background-color: rgba(221, 72, 20, .2);
-        outline: none;
-    }
+
 
     html,
     body {
@@ -72,7 +69,7 @@
         height: 38px;
         line-height: 36px;
         padding: .4rem .65rem;
-        text-align: center;
+        text-align: left;
     }
 
     header li.menu-item a:hover,
@@ -269,13 +266,16 @@
                 <li class="menu-toggle">
                     <button onclick="toggleMenu();">&#9776;</button>
                 </li>
-                <li class="menu-item hidden"><a href="/">Home</a></li>
-                <li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/">Pengujian</a>
+                <li class="menu-item hidden"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                <li class="menu-item hidden"><a href="<?= route_to('cbr_form'); ?>"><i class="fa fa-chart-bar"></i>
+                        Pengujian</a>
                 </li>
-                <li class="menu-item hidden"><a href="<?= route_to('kucing_list'); ?>">Kucing</a></li>
-                <li class="menu-item hidden"><a href="<?= route_to('ciri_list'); ?>">Karakteristik</a>
+                <li class="menu-item hidden"><a href="<?= route_to('kucing_list'); ?>"><i class="fa fa-cat"></i>
+                        Kucing</a></li>
+                <li class="menu-item hidden"><a href="<?= route_to('ciri_list'); ?>"><i class="fa fa-eye"></i> Ciri</a>
                 </li>
-                <li class="menu-item hidden"><a href="<?= route_to('hub_list'); ?>">Pengetahuan</a></li>
+                <li class="menu-item hidden"><a href="<?= route_to('hub_list'); ?>"><i class="fa fa-code-branch"></i>
+                        Hubungan</a></li>
             </ul>
         </div>
 

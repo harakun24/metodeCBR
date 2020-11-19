@@ -260,4 +260,11 @@ class Admin extends BaseController
         ];
         return view('cbr_hasil', $data);
     }
+    public function input_cbr()
+    {
+        $data = [
+            'ciri' => $this->ciri->findAll()
+        ];
+        return view('cbr_form', $data);
+    }
 }
