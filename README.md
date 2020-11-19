@@ -1,6 +1,6 @@
 # Cat Finder
 
-## Dengan metode CBR (Case Base Reasoning)
+## Dengan metode CBR (Cased-Base Reasoning)
 
 Case-Based Reasoning (CBR) merupakan sebuah pendekatan penyelesaian masalah dengan menekankan peran pengalaman sebelumnya. Permasalahan baru dapat diselesaikan dengan memanfaatkan kembali dan mungkin malakukan penyesuaian terhadap permasalahan yang memiliki kesamaan yang telah diselesaikan sebelumnya.
 
