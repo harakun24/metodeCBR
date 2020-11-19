@@ -4,7 +4,7 @@
     <span class="col-12 m-1">Pilih ciri-ciri yang cocok:</span>
     <?php $i = 0;
     foreach ($ciri as $c) : ?>
-    <div class="col-3 m-1">
+    <div class="col-12 col-sm-5 col-md-3 m-1">
 
         <div class="input-group card">
             <div class="card-body">
