@@ -1,5 +1,14 @@
 <?= $this->extend('welcome_message') ?>
 <?= $this->section('content') ?>
+<style>
+.img-show {
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+.img-show:hover {
+    width: 200%
+}
+</style>
 <div class="mb-4 pb-4">
     <?php if ($fhasil > 0) : ?>
     <button onclick="sh()" class="p-3 btn btn-sm btn-outline-success mb-2"><i class="fa fa-chart-bar"></i>
@@ -25,13 +34,14 @@
         </div>
         <?php endforeach ?>
     </div>
-    <h1>Hasil: </h1>
+    <h2>Hasil: </h2>
     <?php foreach ($arrhasil as $ar) : ?>
     <?php if ($ar['hasil'] == $fhasil) : ?>
     <div class="col-12 m-2 d-flex flex-wrap justify-content-between">
-        <span class="col-12"><?= $ar['kucing']; ?> : <b><?= $fhasil; ?></b></span>
+        <span class="col-12"><?= $ar['kucing']; ?> : <b><?= $fhasil; ?></b> <span
+                class="text-success">(<?= $fhasil * 100; ?>%)</span></span>
         <div class="col-1">
-            <img src="/assets/img/<?= $ar['foto']; ?>" class="col-12" alt="">
+            <img src="/assets/img/<?= $ar['foto']; ?>" class="col-12 img-show" alt="">
         </div>
         <div class="col-8">
             <?= $ar['deskripsi']; ?>
